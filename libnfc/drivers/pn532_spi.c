@@ -325,7 +325,7 @@ pn532_spi_wakeup(nfc_device *pnd)
 
   if (spi_byte == 0xff) {
     log_put(LOG_GROUP, LOG_CATEGORY, NFC_LOG_PRIORITY_DEBUG, "%s", "Wakeup is needed");
-    spi_set_speed(DRIVER_DATA(pnd)->port, 5000); // set slow speed
+    spi_set_speed(DRIVER_DATA(pnd)->port, 4900000); // set slow speed
 
     res = pn532_SAMConfiguration(pnd, PSM_NORMAL, 1000); // wakeup by sending SAMConfiguration, which works just fine
 
